@@ -14,10 +14,14 @@ public:
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
-	
+
 	void FixMaterialGuids() const;
 	void FixTextureGuids() const;
 	void FixEmptyTextureGuids() const;
+
+private:
+	template<typename T>
+	bool ShouldModify(T* Object) const;
 	
 	
 private:
